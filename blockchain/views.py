@@ -21,6 +21,8 @@ def index(request):
 def sell(request):
     return render(request, 'blockchain/sell.html')
 
+def profile(request):
+    return render(request, 'blockchain/profile.html')
 
 class BlockDetail(DetailView):
     model = Block
