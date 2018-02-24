@@ -13,6 +13,7 @@ class Shopper(models.Model):
     name = models.CharField(max_length=100)
     phone = models.CharField(max_length=20)
     user = models.OneToOneField(User, blank=True, null=True)
+    public_key = models.CharField(max_length=100, blank=True, null=True)
 
     def save(self, *args, **kwargs):
         if not self.user:

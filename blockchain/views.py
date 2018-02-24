@@ -43,7 +43,8 @@ def signup_view(request):
     name = request.POST['name']
     password = request.POST['password']
     phone = request.POST['phone']
-    s = Shopper(name=name, phone=phone)
+    public_key = request.POST['public_key']
+    s = Shopper(name=name, phone=phone, public_key=public_key)
     s.save(password=password)
     user = authenticate(username=name, password=password)
     login(request, user)
