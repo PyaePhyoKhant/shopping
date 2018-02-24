@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home</title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <!-- ICON font -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- CUSTOM -->
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+  <!-- NAVBAR starts -->
+  {% include 'blockchain/partials/navbar.html' %}
+  <!-- NAVBAR ends -->
+
+  <!-- SIDENAV starts -->
+  {% include 'blockchain/partials/sidenav.html' %}
+  <!-- SIDENAV ends -->
+
+  <!-- CONTENT starts -->
+  {% block content %}
+  {% endblock %}
+  <!-- CONTENT ends -->
+
+  <!-- FLOAT BTN starts -->
+  {% include 'blockchain/partials/floatbtn.html' %}
+  <!-- FLOAT BTN ends -->
+
+  <!-- FOOTER starts -->
+  {% include 'blockchain/partials/footer.html' %}
+  <!-- FOOTER ends -->
+
+  <!-- SCRIPTs -->
+  <!-- JQUERY -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <!-- CUSTOM -->
+  <script src="/static/js/script.js"></script>
+
+</body>
+
+</html>

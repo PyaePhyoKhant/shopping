@@ -1,0 +1,31 @@
+{% extends 'blockchain/partials/layout.html' %}
+
+{% block content %}
+
+<div class="container-fluid">
+  <!-- BG and SEARCH BAR starts -->
+  {% include 'blockchain/partials/searchbar.html' %}
+  <!-- BG and SEARCH BAR ends -->
+  <!-- CATEGORY BAR starts -->
+  {% include 'blockchain/partials/catbar.html' %}
+  <!-- CATEGORY BAR ends -->
+  <div class="row">
+    {% for block in blocks %}
+    <div class="col s6 m4 l3">
+      <div class="card">
+        <div class="card-image">
+          <img src="/static/images/msi.jpg" class="responsive-img">
+          <span class="card-title red-text">{{ block.title }}</span>
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add_shopping_cart</i></a>
+        </div>
+        <div class="card-content">
+          <p>{{ block.price }}</p>
+          <p><a href="{% url 'block_detail' pk=block.id%}">Details</a></p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
