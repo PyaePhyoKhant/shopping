@@ -1,3 +1,48 @@
+/* @import url('https://fonts.googleapis.com/css?family=Poiret+One'); */
+@import url('https://fonts.googleapis.com/css?family=Megrim');
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.preloader-background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* .mynav nav {
+  background-color: rgba(0, 0, 0, 0.3);
+} */
+
+nav .brand-logo {
+  padding-left: 20px;
+  /* font-family: 'Poiret One', cursive; */
+  font-family: 'Megrim', cursive;
+  font-weight: 700;
+}
+
+nav .brand-logo img {
+  margin-top: 8px;
+}
+
+#nav-mobile {
+  padding-right: 30px;
+}
+
 .background img {
   width: 100%;
   height: 50vh;
@@ -6,11 +51,11 @@
 
 .background .input-field {
   width: auto;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-top: -150px;
+  /* margin-left: 15%;
+  margin-right: 15%; */
+  margin-top: -151px;
   margin-bottom: 100px;
-  background: rgba(255,255,255,0.9);
+  background: rgba(255, 255, 255, 0.9);
   box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
   border-radius: 2px;
   z-index: 5;
@@ -28,18 +73,115 @@
   padding-left: 4rem;
 }
 
-.catbar nav .nav-wrapper{
-  height: 100px;
+.background .sbtns {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.catbar nav {
+  height: 45px;
+  line-height: 45px;
+}
+
+.catbar nav i.material-icons {
+  margin-top: -11px;
+}
+
+.detail-title {
+  font-size: 2em;
+}
+
+.sellcard {
+  margin-top: -200px;
+}
+
+.input-file-container {
+  position: relative;
+  width: auto;
+}
+
+.input-file-trigger {
+  display: block;
+  padding: 14px 45px;
+  background: #39D2B4;
+  color: #fff;
+  font-size: 1em;
+  transition: all .4s;
+  cursor: pointer;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.input-file {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 225px;
+  opacity: 0;
+  padding: 14px 0;
+  cursor: pointer;
+}
+
+.input-file:hover+.input-file-trigger,
+.input-file:focus+.input-file-trigger,
+.input-file-trigger:hover,
+.input-file-trigger:focus {
+  background: #34495E;
+  color: #39D2B4;
+}
+
+.file-return {
+  margin: 0;
+}
+
+.file-return:not(:empty) {
+  margin: 1em 0;
+}
+
+.file-return {
+  font-style: italic;
+  font-size: .9em;
+  font-weight: bold;
+}
+
+.file-return:not(:empty):before {
+  content: "Selected file: ";
+  font-style: normal;
+  font-weight: normal;
 }
 
 /* -------------------------------------------------------------------------- */
+
 @media (max-width:480px) {
   .background img {
     height: 40vh;
   }
   .background .input-field {
     width: auto;
-    margin-left: 5%;
-    margin-right: 5%;
+    /* margin-left: 5%;
+    margin-right: 5%; */
   }
+  .catbar nav i.material-icons {
+    margin-top: -5px;
+  }
+  .background .sbtns {
+    top: 30%;
+    left: 30%;
+    transform: translate(-20%,-30%);
+  }
+}
+
+@media (min-width:768px) {
+
+}
+
+@media (max-width:1024px) {
+  .background img {
+    height: 30vh;
+  }
+}
+
+@media (min-width:1280px) {
+
 }

@@ -6,10 +6,10 @@ def index(request):
     context = {'blocks': Block.objects.all(), 'just_test': 'Hello World!'}
     return render(request, 'blockchain/index.html', context)
 
-# def details(request):
-#     return render(request, 'blockchain/details.html')
+def sell(request):
+    return render(request, 'blockchain/sell.html')
 
 class BlockDetail(DetailView):
     model = Block
     template_name = 'blockchain/detail.html'
-    context_object_name = 'block'
+    context_object_name = 'blk'

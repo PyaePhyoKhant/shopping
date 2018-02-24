@@ -12,31 +12,42 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- CUSTOM -->
   <link rel="stylesheet" href="/static/css/style.css">
+  <!-- FONT AWESOME -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </head>
 
 <body>
-  <!-- NAVBAR starts -->
-  {% include 'blockchain/partials/navbar.html' %}
-  <!-- NAVBAR ends -->
+  {% include 'blockchain/partials/preloader.html' %}
+  <main>
+    <!-- NAVBAR starts -->
+    {% include 'blockchain/partials/navbar.html' %}
+    <!-- NAVBAR ends -->
 
-  <!-- SIDENAV starts -->
-  {% include 'blockchain/partials/sidenav.html' %}
-  <!-- SIDENAV ends -->
+    <!-- SIDENAV starts -->
+    {% include 'blockchain/partials/sidenav.html' %}
+    <!-- SIDENAV ends -->
 
-  <!-- CONTENT starts -->
-  {% block content %}
-  {% endblock %}
-  <!-- CONTENT ends -->
+    <!-- CONTENT starts -->
+    {% block content %}
+    {% endblock %}
+    <!-- CONTENT ends -->
 
-  <!-- FLOAT BTN starts -->
-  {% include 'blockchain/partials/floatbtn.html' %}
-  <!-- FLOAT BTN ends -->
+    <!-- FLOAT BTN starts -->
+    {% include 'blockchain/partials/floatbtn.html' %}
+    <!-- FLOAT BTN ends -->
 
-  <!-- FOOTER starts -->
-  {% include 'blockchain/partials/footer.html' %}
-  <!-- FOOTER ends -->
+    <!-- FOOTER starts -->
+    {% include 'blockchain/partials/footer.html' %}
+    <!-- FOOTER ends -->
+  </main>
 
   <!-- SCRIPTs -->
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+      $('.preloader-background').delay(1000).fadeOut('slow');
+      $('.preloader-wrapper').delay(1000).fadeOut();
+    });
+  </script>
   <!-- JQUERY -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <!-- Compiled and minified JavaScript -->
