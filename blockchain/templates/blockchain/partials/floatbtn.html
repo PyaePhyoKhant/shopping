@@ -3,8 +3,10 @@
       <i class="large material-icons">explore</i>
     </a>
   <ul>
-    <li><a href="{% url 'sell' %}" class="btn-floating green"><i class="material-icons">publish</i></a></li>
-    <li><a class="btn-floating blue"><i class="material-icons">shopping_cart</i></a></li>
-    <li><a class="btn-floating purple"><i class="material-icons">exit_to_app</i></a></li>
+    <li><a href="{% url 'sell' %}" class="btn-floating tooltipped green" data-position="left" data-delay="50" data-tooltip="Sell My Item"><i class="material-icons">publish</i></a></li>
+    <li><a href="#cartmodal" class="btn-floating modal-trigger tooltipped blue" data-position="left" data-delay="50" data-tooltip="Purchased Items"><i class="material-icons">shopping_cart</i></a></li>
+    {% if user.is_authenticated %}
+    <li><a class="btn-floating tooltipped purple" data-position="left" data-delay="50" data-tooltip="Logout"><i class="material-icons">exit_to_app</i></a></li>
+    {% endif %}
   </ul>
 </div>

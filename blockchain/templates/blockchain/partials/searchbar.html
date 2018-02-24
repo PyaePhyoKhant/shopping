@@ -10,8 +10,11 @@
       </form>
     </div>
     <div class="sbtns center">
+      {% if user.is_authenticated %}
+      {% else %}
       <a href="#signinmodal" class="waves-effect waves-light btn indigo modal-trigger">Sign In</a>
       <a href="#signupmodal" class="waves-effect waves-light btn indigo modal-trigger">Sign Up</a>
+      {% endif %}
     </div>
   </div>
 </div>
