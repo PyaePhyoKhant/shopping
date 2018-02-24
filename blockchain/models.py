@@ -26,6 +26,8 @@ class Shopper(models.Model):
 def hash_block(block_instance):
     return hashlib.sha256(str(block_instance.id).encode('utf-8') +
                           str(block_instance.title).encode('utf-8') +
+                          str(block_instance.description).encode('utf-8') +
+                          str(block_instance.comment).encode('utf-8') +
                           str(block_instance.created_at).encode('utf-8') +
                           str(block_instance.price).encode('utf-8') +
                           str(block_instance.seller).encode('utf-8') +
@@ -36,6 +38,8 @@ def hash_block(block_instance):
 
 class Block(models.Model):
     title = models.CharField(max_length=100)
+    description = models.TextField(blank=True, null=True)
+    comment = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(default=timezone.now)
     price = models.IntegerField()
     seller = models.ForeignKey(Shopper, related_name='seller', blank=True, null=True)
