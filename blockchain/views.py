@@ -5,6 +5,7 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from blockchain.models import Block, Shopper
 from django.views.generic import DetailView
+import requests
 
 
 def index(request):
@@ -15,6 +16,12 @@ def index(request):
         context = {'blocks': Block.objects.filter(
             Q(title__icontains=search_value) | Q(description__icontains=search_value) | Q(
                 comment__icontains=search_value))}
+    try:
+        r = requests.get('https://sendkudo.org/api/v1/getbalance/' + request.user.shopper.public_key)
+        if r.status_code == 200:
+            context['kudos'] = r.json()['balance']
+    except:
+        context['kudos'] = 0
     return render(request, 'blockchain/index.html', context)
 
 
