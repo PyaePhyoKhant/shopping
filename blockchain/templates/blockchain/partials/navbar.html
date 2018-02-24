@@ -13,7 +13,14 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="#cartmodal" class="modal-trigger"><i class="material-icons">local_grocery_store</i></a></li>
         <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-        <!-- <li><a href="#"><i class="fas fa-camera-retro"></i></a></li> -->
+        {% if user.is_authenticated %}
+        <li>
+          <a class="dropdown-button" href="#!" data-activates="dropdown3">
+            UserName
+            <i class="material-icons right">arrow_drop_down</i>
+          </a>
+        </li>
+        {% endif %}
       </ul>
     </div>
   </nav>
@@ -28,22 +35,22 @@
         <div class="row">
           <div class="input-field col s12">
             <i class="material-icons prefix">account_circle</i>
-            <input id="username" type="text" class="validate">
-            <label for="username">Username</label>
+            <input id="uname" type="text" class="validate">
+            <label for="uname">Username</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
             <i class="material-icons prefix">vpn_key</i>
-            <input id="password" type="password" class="validate">
-            <label for="password">Password</label>
+            <input id="pwd" type="password" class="validate">
+            <label for="pwd">Password</label>
           </div>
         </div>
       </form>
     </div>
   </div>
   <div class="modal-footer">
-    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat indigo white-text">Submit</a>
   </div>
 </div>
 <!-- SIGN IN ends -->
@@ -79,7 +86,7 @@
     </div>
   </div>
   <div class="modal-footer">
-    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat indigo white-text">Submit</a>
   </div>
 </div>
 <!-- SIGN UP ends -->
@@ -109,3 +116,10 @@
   </div>
 </div>
 <!-- CART ends -->
+<!-- DROPDOWN starts -->
+<ul id="dropdown3" class="dropdown-content">
+  <li><a href="#!">Profile</a></li>
+  <li><a href="#!">My Items</a></li>
+  <li><a href="#!">Logout</a></li>
+</ul>
+<!-- DROPDOWN ends -->

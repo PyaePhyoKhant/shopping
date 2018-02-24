@@ -13,4 +13,12 @@ $(document).ready(function() {
   $('#cartmodal').modal();
   // category bar dropdown
   $(".dropdown-button").dropdown();
+  // search
+  $('#search').keypress(function(e) {
+    if (e.which == 13) {
+      console.log('enter pressed');
+      e.preventDefault();
+      $('#search-form').submit();
+    }
+  });
 });
