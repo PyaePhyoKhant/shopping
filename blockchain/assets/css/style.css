@@ -24,10 +24,6 @@ main {
   bottom: 0;
 }
 
-/* .mynav nav {
-  background-color: rgba(0, 0, 0, 0.3);
-} */
-
 nav .brand-logo {
   padding-left: 20px;
   /* font-family: 'Poiret One', cursive; */
@@ -100,16 +96,28 @@ nav .brand-logo img {
 .input-file-container {
   position: relative;
   width: auto;
+  margin: 10px auto;
 }
 
 .input-file-trigger {
   display: block;
-  padding: 14px 45px;
+  /* padding: 14px 45px; */
+  padding: 30px;
   background: #39D2B4;
-  color: #fff;
-  font-size: 1em;
+  /* color: #fff; */
+  /* font-size: 2em; */
   transition: all .4s;
   cursor: pointer;
+  /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); */
+}
+
+.input-file-trigger i {
+  background: #3f51b5;
+  color: #fff;
+  font-size: 3em;
+  width: 70px;
+  line-height: 70px;
+  border-radius: 50%;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
 
@@ -149,6 +157,12 @@ nav .brand-logo img {
   content: "Selected file: ";
   font-style: normal;
   font-weight: normal;
+}
+
+.item-text {
+  /* color: #009688 !important; */
+  padding: 10px !important;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 /* -------------------------------------------------------------------------- */

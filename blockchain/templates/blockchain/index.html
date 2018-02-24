@@ -12,15 +12,17 @@
   <div class="row">
     {% for block in blocks %}
     <div class="col s6 m4 l3">
-      <div class="card">
+      <div class="card indigo lighten-5">
         <div class="card-image">
           <img src="/static/images/msi.jpg" class="responsive-img">
-          <span class="card-title red-text">{{ block.title }}</span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add_shopping_cart</i></a>
+          <span class="card-title item-text">{{ block.title }}</span>
+          <a class="btn-floating halfway-fab waves-effect waves-light red tooltipped" data-position="left" data-delay="50" data-tooltip="Add to Cart">
+            <i class="material-icons">add_shopping_cart</i>
+          </a>
         </div>
         <div class="card-content">
-          <p>{{ block.price }} Ks</p>
-          <p><a href="{% url 'block_detail' pk=block.id%}">Details</a></p>
+          <p>{{ block.price }} Kudos</p>
+          <p><a href="{% url 'block_detail' pk=block.id%}" class="cyan-text">Details</a></p>
         </div>
       </div>
     </div>

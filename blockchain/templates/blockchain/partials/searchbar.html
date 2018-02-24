@@ -1,17 +1,15 @@
 <div class="background">
-  <img src="/static/images/bg.jpg" class="bg-img responsive-img">
-  <form class="container">
+    <img src="/static/images/bg.jpg" class="bg-img responsive-img">
     <div class="input-field">
-        <form action="{% url 'index' %}" method="get">
+        <form action="#" method="post" class="container" id="search-form">
+            {% csrf_token %}
             <input id="search" type="search" name="search_value" required>
             <label class="label-icon" for="search"><i class="material-icons">search</i></label>
             <i class="material-icons searchclose">close</i>
-{#                <input type="submit" value="Submit">#}
         </form>
     </div>
     <div class="sbtns center">
-      <a href="#signinmodal" class="waves-effect waves-light btn indigo modal-trigger">Sign In</a>
-      <a href="#signupmodal" class="waves-effect waves-light btn indigo modal-trigger">Sign Up</a>
+        <a href="#signinmodal" class="waves-effect waves-light btn indigo modal-trigger">Sign In</a>
+        <a href="#signupmodal" class="waves-effect waves-light btn indigo modal-trigger">Sign Up</a>
     </div>
-  </form>
 </div>
