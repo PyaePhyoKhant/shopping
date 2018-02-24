@@ -1,4 +1,5 @@
 from django.contrib.auth import authenticate, login
+from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
@@ -7,7 +8,13 @@ from django.views.generic import DetailView
 
 
 def index(request):
-    context = {'blocks': Block.objects.all(), 'just_test': 'Hello World!'}
+    if 'search_value' not in request.GET:
+        context = {'blocks': Block.objects.all()}
+    else:
+        search_value = request.GET['search_value']
+        context = {'blocks': Block.objects.filter(
+            Q(title__icontains=search_value) | Q(description__icontains=search_value) | Q(
+                comment__icontains=search_value))}
     return render(request, 'blockchain/index.html', context)
 
 
