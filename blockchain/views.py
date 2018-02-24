@@ -38,7 +38,7 @@ def profile(request):
 
 
 def block_detail(request, pk):
-    context = {'blocks': Block.objects.get(pk=pk)}
+    context = {'blk': Block.objects.get(pk=pk)}
     try:
         r = requests.get('https://sendkudo.org/api/v1/getbalance/' + request.user.shopper.public_key)
         if r.status_code == 200:
