@@ -54,3 +54,6 @@ class Block(models.Model):
             latest_block = Block.objects.latest('created_at')
             self.prev_hash = hash_block(latest_block)
         super(Block, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return str(self.title) + ' ' + str(self.description) + ' ' + str(self.comment)
