@@ -5,15 +5,18 @@
         <img src="/static/images/sidenavbg.jpg" class="responsive-img">
       </div>
       <a href="#!user"><img class="circle" src="/static/images/user.png"></a>
-      <a href="#!name"><span class="white-text name">John Doe</span></a>
-      <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+      <a href="#!name"><span class="white-text name">{{ request.user.username }}</span></a>
+      <a href="#!email"><span class="white-text email"></span></a>
     </div>
   </li>
-  <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-  <li><a href="#!">Second Link</a></li>
-  <li>
-    <div class="divider"></div>
-  </li>
+  <li><a href="{% url 'index' %}" class="waves-effect"><i class="material-icons">home</i>Home</a></li>
+  <li><a href="{% url 'message' %}" class="waves-effect"><i class="material-icons">send</i>Message</a></li>
+  <li><a href="{% url 'sell' %}" class="waves-effect"><i class="material-icons">publish</i>Sell Item</a></li>
+  <li><a href="#cartmodal" class="waves-effect modal-trigger"><i class="material-icons">shopping_cart</i>Purchased Items</a></li>
+  <li><div class="divider"></div></li>
+  <li><a href="{% url 'profile' %}" class="waves-effect"><i class="material-icons">account_circle</i>Profile</a></li>
+  <li><a href="#!" class="waves-effect"><i class="material-icons">exit_to_app</i>Logout</a></li>
+  <!-- <li><a href="#!">Second Link</a></li>
   <li><a class="subheader">Subheader</a></li>
-  <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+  <li><a class="waves-effect" href="#!">Third Link With Waves</a></li> -->
 </ul>

@@ -28,6 +28,9 @@ def index(request):
 def sell(request):
     return render(request, 'blockchain/sell.html')
 
+def message(request):
+    return render(request, 'blockchain/message.html')
+
 def profile(request):
     return render(request, 'blockchain/profile.html')
 
