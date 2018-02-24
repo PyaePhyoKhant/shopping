@@ -1,7 +1,7 @@
 <div class="background">
     <img src="/static/images/bg.jpg" class="bg-img responsive-img">
     <div class="input-field">
-        <form action="#" method="post" class="container" id="search-form">
+        <form action="{% url 'index' %}" method="get" class="container" id="search-form">
             {% csrf_token %}
             <input id="search" type="search" name="search_value" required>
             <label class="label-icon" for="search"><i class="material-icons">search</i></label>
