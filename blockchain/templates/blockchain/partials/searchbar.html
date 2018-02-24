@@ -1,6 +1,6 @@
 <div class="background">
-  <img src="/static/images/bg.jpg" class="responsive-img">
-  <form>
+  <img src="/static/images/bg.jpg" class="bg-img responsive-img">
+  <form class="container">
     <div class="input-field">
         <form action="{% url 'index' %}" method="get">
             <input id="search" type="search" name="search_value" required>
@@ -8,6 +8,10 @@
             <i class="material-icons searchclose">close</i>
 {#                <input type="submit" value="Submit">#}
         </form>
+    </div>
+    <div class="sbtns center">
+      <a href="#signinmodal" class="waves-effect waves-light btn indigo modal-trigger">Sign In</a>
+      <a href="#signupmodal" class="waves-effect waves-light btn indigo modal-trigger">Sign Up</a>
     </div>
   </form>
 </div>

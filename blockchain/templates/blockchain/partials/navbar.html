@@ -1,9 +1,11 @@
-<div class="navbar-fixed">
+<div class="navbar-fixed mynav">
     <nav class="indigo">
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo center">
-                <i class="material-icons">layers</i>
-                Chain Gwim
+            <a href="{% url 'index' %}" class="brand-logo">
+                <img src="/static/images/logo.png" width="50px" alt="">
+                <span class="hide-on-med-and-down">
+          Chain Gwim
+        </span>
             </a>
             <a href="#" data-activates="slide-out" class="button-collapse">
                 <i class="material-icons">menu</i>
@@ -14,10 +16,9 @@
                 {% endif %}
                 <li><a href="#cartmodal" class="modal-trigger"><i class="material-icons">local_grocery_store</i></a>
                 </li>
-                {#                {% if not request.user %}#}
-                <li><a href="#signinmodal" class="modal-trigger">Sign In</a></li>
-                <li><a href="#signupmodal" class="modal-trigger">Sign Up</a></li>
-                {#                {% endif %}#}
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <!-- <li><a href="#"><i class="fas fa-camera-retro"></i></a></li> -->
+
             </ul>
         </div>
     </nav>

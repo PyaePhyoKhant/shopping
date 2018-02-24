@@ -4,9 +4,21 @@
   {% include 'blockchain/partials/searchbar.html' %}
   <div class="container">
     <div class="card">
-      <div class="card-content">
+      <div class="card-panel">
         <div class="row">
-          <div class="col s12 m12 l12">
+          <div class="col m12">
+            <div class="detail-title">
+              <span class="left red-text">
+                <i class="material-icons">format_quote</i>  {{ blk.title }}
+              </span>
+              <span class="right">
+                <a href="{% url 'index' %}" class="btn-flat indigo white-text"><i class="material-icons">keyboard_backspace</i></a>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col m12">
             <div class="carousel">
               <a class="carousel-item" href="#one!"><img src="/static/images/msi.jpg"></a>
               <a class="carousel-item" href="#two!"><img src="/static/images/msi1.jpg"></a>
@@ -18,27 +30,26 @@
           <div class="col m6 s12">
             <ul class="collapsible" data-collapsible="accordion">
               <li>
-                <div class="collapsible-header active"><i class="material-icons">filter_drama</i>First</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                <div class="collapsible-header active"><i class="material-icons">filter_drama</i>Item Name</div>
+                <div class="collapsible-body"><span>{{ blk.title }}</span></div>
               </li>
               <li>
-                <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                <div class="collapsible-header"><i class="material-icons">place</i>Item Description</div>
+                <div class="collapsible-body"><span>This is Model B produced on Feb 2016</span></div>
               </li>
               <li>
-                <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                <div class="collapsible-header"><i class="material-icons">whatshot</i>Status</div>
+                <div class="collapsible-body"><span>{{ blk.status }}</span></div>
               </li>
             </ul>
-            {{ block.title }} {{ block.price }} {{ block.created_at }} {{ block.seller.name }} {{ block.seller.phone }}
-            <a href="{% url 'index' %}">Back</a>
+               <!-- {{ block.seller.name }} {{ block.seller.phone }} -->
           </div>
           <div class="col m6 s12">
             <div class="card blue-grey darken-1">
               <div class="card-content white-text">
-                <span class="card-title">iPhone 5s</span>
+                <span class="card-title">Seller's Comment</span>
                 <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                <h4>150,000 Ks</h4>
+                <h4>{{ blk.price }} Kudos</h4>
               </div>
               <div class="card-action">
                 <a href="#">Buy</a>

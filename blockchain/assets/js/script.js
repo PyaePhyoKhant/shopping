@@ -11,4 +11,6 @@ $(document).ready(function() {
   $('#signupmodal').modal();
   // cart modal
   $('#cartmodal').modal();
+  // category bar dropdown
+  $(".dropdown-button").dropdown();
 });
