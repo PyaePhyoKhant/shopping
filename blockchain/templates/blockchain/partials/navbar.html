@@ -14,10 +14,10 @@
                 {% endif %}
                 <li><a href="#cartmodal" class="modal-trigger"><i class="material-icons">local_grocery_store</i></a>
                 </li>
-                {% if not request.user %}
-                    <li><a href="#signinmodal" class="modal-trigger">Sign In</a></li>
-                    <li><a href="#signupmodal" class="modal-trigger">Sign Up</a></li>
-                {% endif %}
+                {#                {% if not request.user %}#}
+                <li><a href="#signinmodal" class="modal-trigger">Sign In</a></li>
+                <li><a href="#signupmodal" class="modal-trigger">Sign Up</a></li>
+                {#                {% endif %}#}
             </ul>
         </div>
     </nav>
@@ -54,38 +54,39 @@
 <!-- SIGN IN ends -->
 <!-- SIGN UP starts -->
 <div id="signupmodal" class="modal">
-    <div class="modal-content">
-        <h4>Register</h4>
-        <br>
-        <div class="row">
-            <form class="col s12">
+    <form class="col s12" action="{% url 'signup_view' %}" method="post">
+        <div class="modal-content">
+            <h4>Register</h4>
+            <br>
+            <div class="row">
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="username" type="text" class="validate">
+                        <input id="username" type="text" class="validate" name="name">
                         <label for="username">Username</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">vpn_key</i>
-                        <input id="password" type="password" class="validate">
+                        <input id="password" type="password" class="validate" name="password">
                         <label for="password">Password</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">phone</i>
-                        <input id="number" type="number" class="validate">
+                        <input id="number" type="number" class="validate" name="phone">
                         <label for="number">Phone</label>
                     </div>
                 </div>
-            </form>
+
+            </div>
         </div>
-    </div>
-    <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
-    </div>
+        <div class="modal-footer">
+            <input type="submit" class="modal-action modal-close waves-effect waves-green btn-flat" value="Submit">
+        </div>
+    </form>
 </div>
 <!-- SIGN UP ends -->
 <!-- CART starts -->

@@ -16,9 +16,11 @@ class Shopper(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.user:
+            password = kwargs.pop('password', None)
             email = str(self.name) + '@gmail.com'
             chars = string.ascii_uppercase + string.ascii_lowercase + string.digits
-            password = ''.join(random.choice(chars) for _ in range(8))
+            if not password:
+                password = ''.join(random.choice(chars) for _ in range(8))
             self.user = User.objects.create_user(self.name, email, password)
         super(Shopper, self).save(*args, **kwargs)
 

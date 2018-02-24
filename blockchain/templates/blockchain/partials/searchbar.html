@@ -2,9 +2,12 @@
   <img src="/static/images/bg.jpg" class="responsive-img">
   <form>
     <div class="input-field">
-      <input id="search" type="search" required>
-      <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-      <i class="material-icons searchclose">close</i>
+        <form action="{% url 'index' %}" method="get">
+            <input id="search" type="search" name="search_value" required>
+            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+            <i class="material-icons searchclose">close</i>
+{#                <input type="submit" value="Submit">#}
+        </form>
     </div>
   </form>
 </div>
