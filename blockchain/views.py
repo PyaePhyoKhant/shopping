@@ -28,16 +28,24 @@ def index(request):
 def sell(request):
     return render(request, 'blockchain/sell.html')
 
+
 def message(request):
     return render(request, 'blockchain/message.html')
+
 
 def profile(request):
     return render(request, 'blockchain/profile.html')
 
-class BlockDetail(DetailView):
-    model = Block
-    template_name = 'blockchain/detail.html'
-    context_object_name = 'blk'
+
+def block_detail(request, pk):
+    context = {'blocks': Block.objects.get(pk=pk)}
+    try:
+        r = requests.get('https://sendkudo.org/api/v1/getbalance/' + request.user.shopper.public_key)
+        if r.status_code == 200:
+            context['kudos'] = r.json()['balance']
+    except:
+        context['kudos'] = 0
+    return render(request, 'blockchain/detail.html', context)
 
 
 @csrf_exempt
