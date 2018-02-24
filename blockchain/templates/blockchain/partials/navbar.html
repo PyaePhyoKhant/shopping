@@ -1,109 +1,116 @@
 <div class="navbar-fixed">
-  <nav class="indigo">
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo center">
-        <i class="material-icons">layers</i>
-        Chain Gwim
-      </a>
-      <a href="#" data-activates="slide-out" class="button-collapse">
-          <i class="material-icons">menu</i>
-        </a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#cartmodal" class="modal-trigger"><i class="material-icons">local_grocery_store</i></a></li>
-        <li><a href="#signinmodal" class="modal-trigger">Sign In</a></li>
-        <li><a href="#signupmodal" class="modal-trigger">Sign Up</a></li>
-      </ul>
-    </div>
-  </nav>
+    <nav class="indigo">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">
+                <i class="material-icons">layers</i>
+                Chain Gwim
+            </a>
+            <a href="#" data-activates="slide-out" class="button-collapse">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                {% if request.user %}
+                    <li>{{ request.user.username }}</li>
+                {% endif %}
+                <li><a href="#cartmodal" class="modal-trigger"><i class="material-icons">local_grocery_store</i></a>
+                </li>
+                {% if not request.user %}
+                    <li><a href="#signinmodal" class="modal-trigger">Sign In</a></li>
+                    <li><a href="#signupmodal" class="modal-trigger">Sign Up</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
 </div>
 <!-- SIGN IN starts -->
 <div id="signinmodal" class="modal">
-  <div class="modal-content">
-    <h4>Login</h4>
-    <br>
-    <div class="row">
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s12">
-            <i class="material-icons prefix">account_circle</i>
-            <input id="username" type="text" class="validate">
-            <label for="username">Username</label>
-          </div>
+    <form class="col s12" action="{% url 'login_view' %}" method="post">
+        <div class="modal-content">
+            <h4>Login</h4>
+            <br>
+            <div class="row">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="username" type="text" class="validate" name="username">
+                        <label for="username">Username</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">vpn_key</i>
+                        <input id="password" type="password" class="validate" name="password">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <i class="material-icons prefix">vpn_key</i>
-            <input id="password" type="password" class="validate">
-            <label for="password">Password</label>
-          </div>
+        <div class="modal-footer">
+            <input type="submit" class="modal-action modal-close waves-effect waves-green btn-flat" value="Submit"/>
         </div>
-      </form>
-    </div>
-  </div>
-  <div class="modal-footer">
-    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
-  </div>
+    </form>
 </div>
 <!-- SIGN IN ends -->
 <!-- SIGN UP starts -->
 <div id="signupmodal" class="modal">
-  <div class="modal-content">
-    <h4>Register</h4>
-    <br>
-    <div class="row">
-      <form class="col s12">
+    <div class="modal-content">
+        <h4>Register</h4>
+        <br>
         <div class="row">
-          <div class="input-field col s12">
-            <i class="material-icons prefix">account_circle</i>
-            <input id="username" type="text" class="validate">
-            <label for="username">Username</label>
-          </div>
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="username" type="text" class="validate">
+                        <label for="username">Username</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">vpn_key</i>
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">phone</i>
+                        <input id="number" type="number" class="validate">
+                        <label for="number">Phone</label>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <i class="material-icons prefix">vpn_key</i>
-            <input id="password" type="password" class="validate">
-            <label for="password">Password</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <i class="material-icons prefix">phone</i>
-            <input id="number" type="number" class="validate">
-            <label for="number">Phone</label>
-          </div>
-        </div>
-      </form>
     </div>
-  </div>
-  <div class="modal-footer">
-    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
-  </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+    </div>
 </div>
 <!-- SIGN UP ends -->
 <!-- CART starts -->
 <div id="cartmodal" class="modal">
-  <div class="modal-content">
-    <h4>Items in your Cart</h4>
-    <br>
-    <div class="row">
-      <ul class="collection">
-        <li class="collection-item avatar">
-          <i class="material-icons circle green">insert_chart</i>
-          <span class="title">Title</span>
-          <p>First Line <br> Second Line
-          </p>
-          <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-        </li>
-        <li class="collection-item avatar">
-          <i class="material-icons circle red">play_arrow</i>
-          <span class="title">Title</span>
-          <p>First Line <br> Second Line
-          </p>
-          <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-        </li>
-      </ul>
+    <div class="modal-content">
+        <h4>Items in your Cart</h4>
+        <br>
+        <div class="row">
+            <ul class="collection">
+                <li class="collection-item avatar">
+                    <i class="material-icons circle green">insert_chart</i>
+                    <span class="title">Title</span>
+                    <p>First Line <br> Second Line
+                    </p>
+                    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                </li>
+                <li class="collection-item avatar">
+                    <i class="material-icons circle red">play_arrow</i>
+                    <span class="title">Title</span>
+                    <p>First Line <br> Second Line
+                    </p>
+                    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                </li>
+            </ul>
+        </div>
     </div>
-  </div>
 </div>
 <!-- CART ends -->
