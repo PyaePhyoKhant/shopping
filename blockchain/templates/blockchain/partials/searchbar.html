@@ -4,7 +4,7 @@
     <div class="input-field">
       <form action="{% url 'index' %}" method="get" id="search-form">
         {% csrf_token %}
-        <input id="search" type="search">
+        <input id="search" type="search" name="search_value">
         <label class="label-icon" for="search"><i class="material-icons">search</i></label>
         <i class="material-icons searchclose">close</i>
       </form>
