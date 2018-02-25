@@ -27,10 +27,10 @@
           </div>
         </div>
         <div class="row">
-          <a href="#">
+          <a href="{% url 'info' %}">
             <div class="seller-info center">
-              <img src="/static/images/user.png" class="responsive-img rounded" alt="">
-              <p class="indigo-text">{{ blk.seller }}</p>
+              <img src="/static/images/seller.jpg" width="90px" class="responsive-img rounded" alt="">
+              <p class="indigo-text">{{ blk.seller.name }}</p>
             </div>
           </a>
         </div>
@@ -38,19 +38,22 @@
           <div class="col m6 s12">
             <ul class="collapsible" data-collapsible="accordion">
               <li>
-                <div class="collapsible-header active"><i class="material-icons">filter_drama</i>Item Name</div>
+                <div class="collapsible-header active"><i class="material-icons">assistant_photo</i>Item Name</div>
                 <div class="collapsible-body"><span>{{ blk.title }}</span></div>
               </li>
               <li>
-                <div class="collapsible-header"><i class="material-icons">place</i>Item Description</div>
+                <div class="collapsible-header"><i class="material-icons">bookmark_border</i>Item Description</div>
                 <div class="collapsible-body"><span>This is Model B produced on Feb 2016</span></div>
               </li>
               <li>
-                <div class="collapsible-header"><i class="material-icons">whatshot</i>Status</div>
+                <div class="collapsible-header"><i class="material-icons">details</i>Status</div>
                 <div class="collapsible-body"><span>{{ blk.status }}</span></div>
               </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">phone</i>Phone</div>
+                <div class="collapsible-body"><span>{{ blk.seller.phone }}</span></div>
+              </li>
             </ul>
-               {{ blk.seller.name }} {{ blk.seller.phone }}
           </div>
           <div class="col m6 s12">
 

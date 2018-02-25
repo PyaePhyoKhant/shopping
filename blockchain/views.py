@@ -33,6 +33,10 @@ def message(request):
     return render(request, 'blockchain/message.html')
 
 
+def info(request):
+    return render(request, 'blockchain/info.html')
+
+
 def profile(request):
     return render(request, 'blockchain/profile.html')
 
@@ -78,6 +82,5 @@ def send_kudo(request):
     amount = request.GET['amount']
     sender_sk = request.GET['sender_sk']
     key_url = sender_pk + '/' + receiver_pk + '/' + amount + '/' + sender_sk
-    r=requests.get('https://sendkudo.org/api/v1/sendkudo/' + key_url)
+    r = requests.get('https://sendkudo.org/api/v1/sendkudo/' + key_url)
     return HttpResponseRedirect('/')
-

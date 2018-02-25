@@ -15,14 +15,14 @@
                 </li>
                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                 {% if user.is_authenticated %}
-                    <li>
-                        <a class="dropdown-button" href="#!" data-activates="dropdown3">
-                            {{ request.user.username }}
-                            <i class="material-icons right">arrow_drop_down</i>
-                        </a>
-                    </li>
+                <li><a href="#">{{ kudos }} Kudos</a></li>
+                <li>
+                    <a class="dropdown-button" href="#!" data-activates="dropdown3">
+                        {{ request.user.username }}
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                </li>
                 {% endif %}
-                <li>{{ kudos }} Kudos</li>
             </ul>
         </div>
     </nav>
