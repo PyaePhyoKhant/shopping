@@ -19,7 +19,7 @@ from django.conf.urls import url, include
 from rest_framework.routers import DefaultRouter
 import blockchain.api_views as block_api
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from blockchain.views import login_view, signup_view
+from blockchain.views import login_view, signup_view, send_kudo
 
 router = DefaultRouter()
 router.register(r'block', block_api.BlockViewSet, base_name='block')
@@ -30,6 +30,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^login/', login_view, name='login_view'),
     url(r'^signup/', signup_view, name='signup_view'),
+    url(r'^sendkudo/', send_kudo, name='send_kudo'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

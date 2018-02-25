@@ -71,5 +71,13 @@ def signup_view(request):
     return HttpResponseRedirect('/')
 
 
-def send_kudo(request, sender_pk, sender_sk, receiver_pk):
-    pass
+@csrf_exempt
+def send_kudo(request):
+    sender_pk = request.GET['sender_pk']
+    receiver_pk = request.GET['receiver_pk']
+    amount = request.GET['amount']
+    sender_sk = request.GET['sender_sk']
+    key_url = sender_pk + '/' + receiver_pk + '/' + amount + '/' + sender_sk
+    r=requests.get('https://sendkudo.org/api/v1/sendkudo/' + key_url)
+    return HttpResponseRedirect('/')
+

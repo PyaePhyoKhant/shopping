@@ -53,28 +53,39 @@
                {{ blk.seller.name }} {{ blk.seller.phone }}
           </div>
           <div class="col m6 s12">
-            <div class="card blue-grey darken-1">
-              <div class="card-content white-text">
-                <div class="row">
-                  <span class="card-title">Seller's Comment</span>
-                  <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                  <h4>{{ blk.price }} Kudos</h4>
-                </div>
-                <div class="row">
-                  <div class="input-field">
-                    <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                    <label for="first_name">First Name</label>
+
+                <div class="card blue-grey darken-1">
+                  <div class="card-content white-text">
+                    <div class="row">
+                      <span class="card-title">Seller's Comment</span>
+                      <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                      <h4>{{ blk.price }} Kudos</h4>
+                    </div>
+                        <div class="row">
+                            <form action="{% url 'send_kudo' %}" method="get">
+                          <div class="input-field">
+                            <input placeholder="Your Public Key" id="pk1" type="text" class="validate" value="{{ request.user.shopper.public_key }}" name="sender_pk">
+                            <label for="pk1">From (Your Public Key):</label>
+                          </div>
+                          <div class="input-field">
+                            <input placeholder="Seller Public Key" id="pk2" type="text" class="validate" value="{{ blk.seller.public_key }}" name="receiver_pk">
+                            <label for="pk2">To (Seller Public Key):</label>
+                          </div>
+                          <input type="hidden" name="amount" value="{{ blk.price }}">
+                          <div class="input-field">
+                            <input placeholder="Your Private Key" id="sk" type="password" class="validate" name="sender_sk">
+                            <label for="sk">Your Private Key</label>
+                          </div>
+                          <div class="card-action">
+                            <input type="submit" value="Buy">
+                          </div>
+                                </form>
+                        </div>
                   </div>
-                  <div class="input-field">
-                    <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                    <label for="first_name">First Name</label>
-                  </div>
+
                 </div>
-              </div>
-              <div class="card-action">
-                <a href="#">Buy</a>
-              </div>
-            </div>
+
+
           </div>
         </div>
       </div>
