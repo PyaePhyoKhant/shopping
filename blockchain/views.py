@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
@@ -59,6 +59,12 @@ def login_view(request):
     user = authenticate(username=username, password=password)
     if user is not None:
         login(request, user)
+    return HttpResponseRedirect('/')
+
+
+@csrf_exempt
+def logout_view(request):
+    logout(request)
     return HttpResponseRedirect('/')
 
 
