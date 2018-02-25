@@ -31,6 +31,9 @@ def sell(request):
 def message(request):
     return render(request, 'blockchain/message.html')
 
+def info(request):
+    return render(request, 'blockchain/info.html')
+
 def profile(request):
     return render(request, 'blockchain/profile.html')
 
