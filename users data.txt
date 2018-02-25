@@ -1,0 +1,11 @@
+# KEEP THIS DATS SAFE
+
+
+
+use user name 'Pyae Phyo Khant'
+pk_ppk = '14JpCGfB6UwFZnrAXVDVRpXkDLxHHqjK68P7pw'
+sk_ppk = 'VASg16SZXdtBMwC1qzMtbmShBNaj511CsddnC43MTJ7kHhGef1PXwnTE'
+
+use user name 'Ko Phyo'
+pk2_ko_phyo = '1QsUCGJhoeSw4BJf8QywDmjCGUiz96ye3SAhQf'
+sk2_ko_phyo = 'V6gM7huUhaLLbkP2hqBN9PsjqFdDMUCByYqcBZNo7xtuXKDZtdK3z4U3'
