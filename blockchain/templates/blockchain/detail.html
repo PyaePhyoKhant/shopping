@@ -68,11 +68,11 @@
                             <form action="{% url 'send_kudo' %}" method="get">
                           <div class="input-field">
                             <input placeholder="Your Public Key" id="pk1" type="text" class="validate" value="{{ request.user.shopper.public_key }}" name="sender_pk">
-                            <label for="pk1">From (Your Public Key):</label>
+                            <label for="pk1">From (Your Kudo Address):</label>
                           </div>
                           <div class="input-field">
                             <input placeholder="Seller Public Key" id="pk2" type="text" class="validate" value="{{ blk.seller.public_key }}" name="receiver_pk">
-                            <label for="pk2">To (Seller Public Key):</label>
+                            <label for="pk2">To (Seller Kudo Address):</label>
                           </div>
                           <input type="hidden" name="amount" value="{{ blk.price }}">
                           <div class="input-field">
