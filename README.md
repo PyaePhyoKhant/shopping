@@ -1,6 +1,6 @@
 # Chain Gwin (Team 7 project for Uni Hack Challenge 3)
 
-make sure `python` and `pip` are installed.
+make sure `python` 3 and `pip` are installed.
 
 Inside project root directory,
 to install require python packages
