@@ -62,7 +62,7 @@
                     <div class="row">
                       <span class="card-title">Seller's Comment</span>
                       <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                      <h4>{{ blk.price }} Kudos</h4>
+                      <h4><span class="yellow-text">{{ blk.price }}</span> Kudos</h4>
                     </div>
                         <div class="row">
                             <form action="{% url 'send_kudo' %}" method="get">
@@ -80,7 +80,7 @@
                             <label for="sk">Your Private Key</label>
                           </div>
                           <div class="card-action">
-                            <input type="submit" value="Buy">
+                            <input type="submit" value="Buy" class="btn red lighten-2">
                           </div>
                                 </form>
                         </div>
